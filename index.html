@@ -1,9 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mapa De Olho na Fila</title>
     <link rel="icon" href="sao-paulo-fc-logo.png">
 </head>
@@ -44,22 +46,22 @@
                 info = info + '<h4>Status: ' + row[4] + '</h4>';
                 info = info + '<h4>Hora da atualização: ' + row[3] + '</h4>';
                 info = info + '<h4>Disponibilidade 2ª Dose: ' + row[5] + '</h4>';
-                
+
                 // ref for icons: https://sites.google.com/site/gmapsdevelopment/
                 var icon = 'http://maps.google.com/mapfiles/ms/icons/'
-                if( row[1] == '1' ){            /*sem fila*/
+                if (row[1] == '1') {            /*sem fila*/
                     icon = icon + 'green.png'
-                } else if ( row[1] == '2' ){    /*fila pequena*/
+                } else if (row[1] == '2') {    /*fila pequena*/
                     icon = icon + 'yellow.png'
-                } else if ( row[1] == '3' ){    /*fila média*/
+                } else if (row[1] == '3') {    /*fila média*/
                     icon = icon + 'orange.png'
-                } else if ( row[1] == '4' ){    /*fila grande*/
+                } else if (row[1] == '4') {    /*fila grande*/
                     icon = icon + 'red.png'
-                } else if ( row[1] == '5' ){    /*não funcionando*/
+                } else if (row[1] == '5') {    /*não funcionando*/
                     icon = icon + 'blue-dot.png'
-                } else if ( row[1] == '6' ){    /*aguardando abastecimento 1ª dose*/
+                } else if (row[1] == '6') {    /*aguardando abastecimento 1ª dose*/
                     icon = icon + 'purple.png'
-                } else if ( row[1] == '7' ){    /*aguardando abastecimento 1ª e 2ª dose*/
+                } else if (row[1] == '7') {    /*aguardando abastecimento 1ª e 2ª dose*/
                     icon = icon + 'pink.png'
                 } else {
                     icon = icon + 'blue.png'
@@ -69,7 +71,7 @@
                     coords: row[0],
                     title: row[2],
                     label: row[1],
-                    iconImage:icon,
+                    iconImage: icon,
                     content: info
                 })
             }
